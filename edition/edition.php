@@ -14,8 +14,9 @@
     <table>
         <tr>
             <?php
-                addAction("creation/creation_book.php","POST","create_book");
-                addAction("creation/creation_page.php","POST","create_page");
+                addAction("edition/edition_book.php","POST","edit book","Editer un livre");
+                addAction("edition/edition_film.php","POST","edit film","Editer un film");
+                addAction("edition/edition_series.php","POST","edit serie","Editer une série");
             ?>
         </tr>
     </table>

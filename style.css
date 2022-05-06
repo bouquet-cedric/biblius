@@ -1,5 +1,4 @@
 .menu_actions {
-    width: 17vmin;
     background-color: antiquewhite;
     height: 100%;
     display: flex;
@@ -9,11 +8,51 @@
     left: 0;
     align-items: center;
     border-right: 1px solid;
+    width: 17vmin;
+    animation: anim2 1s 1 linear;
+    transform: translateX(-95%);
+}
+
+@keyframes anim {
+    from {
+        transform: translateX(-95%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes anim2 {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-95%);
+    }
+}
+
+.menu_actions:hover {
+    animation: anim 1s 1 linear;
+    transform: none;
 }
 
 .menu_actions>* {
     margin-bottom: 2vmin;
     padding: 1em 0;
+}
+
+.book {
+    background-image: url("/bibliothèque/images/categories/book.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+
+.film {
+    background-image: url("/bibliothèque/images/categories/film.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer;
 }
 
 .title {
@@ -41,13 +80,22 @@ input[type=submit]:hover {
     align-items: center;
     height: 5vmin;
     background-color: transparent;
-    background-image: url("/bibliothèque/action.png");
+    background-image: url("/bibliothèque/images/logo/action.png");
+    border-radius: 10px 10px 0 10px;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
     position: relative;
+}
+
+.action_créa {
+    background-image: url("/bibliothèque/images/logo/action_création.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 60%;
+    height: 90%;
 }
 
 .info_label {
@@ -63,14 +111,27 @@ input[type=submit]:hover {
     width: 100%;
 }
 
+.info_label.create::after {
+    content: ' ';
+    background-image: url("/bibliothèque/images/logo/plus.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 1em;
+    height: 1em;
+    background-color: lime;
+}
+
+.info_label.edit::after {
+    content: '\01F589';
+    background-color: white;
+    color: lime;
+}
+
 .info_label::after {
-    content: '+';
     position: absolute;
     bottom: 100%;
     right: 0;
-    color: red;
     border: 1px solid black;
-    background-color: lime;
     font-weight: bold;
     transform: translateY(50%);
     border-radius: 50%;
@@ -80,13 +141,12 @@ input[type=submit]:hover {
 }
 
 .action:hover .infoBulles {
-    /* display: inherit; */
     position: absolute;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: flex-start;
-    background-image: url("/bibliothèque/bulle.png");
+    background-image: url("/bibliothèque/images/logo/bulle.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     position: absolute;

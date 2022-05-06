@@ -17,7 +17,6 @@
     ?> 
     <form action="" method="POST" class="c_page">
         <div style="width:20%;height:100%;margin-left:18vmin;float:left;">
-            <!-- <h3>Créer une page</h3> -->
             <fieldset >
                 <legend>Créer une page</legend>
                 <label for="titre">Titre du livre :</label>
@@ -26,7 +25,7 @@
             </fieldset>
         </div>
         <div style="width:calc( 80% - 18vmin );height:95vmin;margin-left:calc( 18vmin + 20% );">
-            <textarea name="content" style="width: 100%;height: 100%;resize: none;">Nouvelle page</textarea>
+            <textarea name="content" style="width: 100%;height: 100%;resize: none;" placeholder="Nouvelle page"></textarea>
         </div>
     </form>
     <?php
