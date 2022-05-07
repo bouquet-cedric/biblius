@@ -9,13 +9,13 @@
     align-items: center;
     border-right: 1px solid;
     width: 17vmin;
-    animation: anim2 1s 1 linear;
-    transform: translateX(-95%);
+    animation: anim2 0.5s 1 linear;
+    transform: translateX(-90%);
 }
 
 @keyframes anim {
     from {
-        transform: translateX(-95%);
+        transform: translateX(-90%);
     }
     to {
         transform: translateX(0%);
@@ -27,12 +27,12 @@
         transform: translateX(0%);
     }
     to {
-        transform: translateX(-95%);
+        transform: translateX(-90%);
     }
 }
 
 .menu_actions:hover {
-    animation: anim 1s 1 linear;
+    animation: anim 0.5s 1 linear;
     transform: none;
 }
 
@@ -105,6 +105,14 @@ input[type=submit]:hover {
     height: 90%;
 }
 
+.action_edit {
+    background-image: url("/bibliothèque/images/logo/action_édition.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 60%;
+    height: 90%;
+}
+
 .info_label {
     position: relative;
     border: 1px solid black;
@@ -125,13 +133,13 @@ input[type=submit]:hover {
     background-repeat: no-repeat;
     width: 1em;
     height: 1em;
-    background-color: lime;
+    background-color: black;
 }
 
 .info_label.edit::after {
     content: '\01F589';
-    background-color: white;
-    color: lime;
+    background-color: black;
+    color: white;
 }
 
 .info_label::after {

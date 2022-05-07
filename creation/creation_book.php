@@ -1,7 +1,6 @@
 <?php 
     require_once($_SERVER["DOCUMENT_ROOT"]."/bibliothèque/utils/fonctions.php");
 
-    echo "<script>console.log(\"".getStringFromArray($_POST)."\");</script>";
     $tmp=checkIsOk(array("auteur","titre"),array("create_book"=>""),"../"); # si auteur et titre sont dans le post ou que post(edit_film) = "" alors c'est bon
     if ($tmp){
 ?>
@@ -34,7 +33,6 @@
     </form>
     <?php
         if (isset($_POST["titre"]) && isset($_POST["auteur"])){
-            // $content=explode("\n",$_POST["content"]);
             echo "<div style='position:absolute;top:0;right:0'>".$_POST["titre"]."<br>".$_POST["auteur"]."</div>";
         }
     ?>

@@ -14,11 +14,38 @@
         $champ=ucfirst(strtolower($label));
         $lblFor=str_replace(" ","_",$label);
         $req=$require?"required":"";
+        $options="";
+        if ($type == "number") $options=$options." min=0";
         echo "
         <div class='$class'>
-            <label for='$lblFor'>$champ :</label>
-            <input name='$lblFor' id='$lblFor' type='$type' placeholder='$placeholder' $req>
+        <label for='$lblFor'>$champ :</label>
+        <input name='$lblFor' id='$lblFor' type='$type' placeholder='$placeholder' $options $req>
         </div>";
+    }
+    
+    function addSelect($class,$label,$options,$values=null,$require=false){
+        $lblFor=str_replace(" ","_",$label);
+        $req=$require?"required":"";
+        $champ=ucfirst(strtolower($label));
+        echo "<div class='$class'>
+        <label for='$lblFor'>$champ :</label>
+        <select name='$lblFor' id='$lblFor' $req>";
+        logger("$values");
+        sleep(3);
+        for($i=0;$i<count($options);$i++){
+            $opt=$options[$i];
+            if ($values != null) $val=$values[$i];
+            else {
+                $val=str_replace(" ","_",$opt);
+                $val=strtolower($val);
+            }
+            echo "<option value='$val'>$opt</option>";
+        }
+        echo "</select>";
+    }
+
+    function logger($chaine){
+        echo "<script>console.log(".$chaine.");</script>";
     }
 
     function checkIsOk($keys,$couples,$back){

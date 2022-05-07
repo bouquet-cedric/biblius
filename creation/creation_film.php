@@ -1,4 +1,8 @@
-<?php require_once($_SERVER["DOCUMENT_ROOT"]."/bibliothèque/utils/fonctions.php");?>
+<?php 
+    require_once($_SERVER["DOCUMENT_ROOT"]."/bibliothèque/utils/fonctions.php");
+    $tmp=checkIsOk(array("titre"),array("create_film"=>""),"../");
+    if ($tmp){
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -19,23 +23,21 @@
         <div style="width:20%;height:100%;margin-left:18vmin;float:left;">
             <fieldset >
                 <legend>Créer une page</legend>
-                <label for="titre">Titre du livre :</label>
-                <input name="titre" id="titre" type="text" placeholder="titre">
-                <input type="submit" value="Enregistrer">
+                <?php addChamp("champ","titre","text","",true)?>
+                <?php addChamp("champ","volume","number","Numéro du film")?>
+                <?php addSelect("champ","etat",array("vu","en cours","à voir"),range(0,3),true)?>
+                <input type="submit" name="sended" value="Enregistrer">
             </fieldset>
-        </div>
-        <div style="width:calc( 80% - 18vmin );height:95vmin;margin-left:calc( 18vmin + 20% );">
-            <textarea name="content" style="width: 100%;height: 100%;resize: none;" placeholder="Nouvelle page"></textarea>
         </div>
     </form>
     <?php
-        if (isset($_POST["titre"]) && isset($_POST["content"])){
-            // $content=explode("\n",$_POST["content"]);
-            $content=str_replace("\n","<br>",$_POST["content"]);
-
-            echo "<div style='position:absolute;top:0;right:0'>".$_POST["titre"]."<br>".$content."</div>";
+        if (isset($_POST["sended"])){
+            echo "<div style='position:absolute;top:0;right:0'>".$_POST["titre"]."<br>".$_POST["volume"]."<br>".$_POST["etat"]."</div>";
         }
     ?>
 </body>
 
 </html>
+<?php
+    }
+?>
