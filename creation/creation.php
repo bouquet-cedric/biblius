@@ -18,7 +18,7 @@
             <?php
                 addAction("creation/creation_book.php","POST","create book","Ajouter un livre");
                 addAction("creation/creation_film.php","POST","create film","Ajouter un film");
-                addAction("creation/creation_series.php","POST","create series","Ajouter une série");
+                addAction("creation/creation_series.php","POST","create serie","Ajouter une série");
             ?>
         </tr>
     </table>
